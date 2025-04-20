@@ -104,3 +104,136 @@
     <li>2021-Actualidad – Electromecánico (SERMA S.A., Zaragoza)</li>
   </ul>
 </section>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV de Miguel Somoza</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; background: #f4f4f4; color: #333; }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 15px;
+    }
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      color: #1f2937;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    ul { margin-left: 20px; line-height: 1.6; }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #1f2937;
+      color: white;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642" alt="Foto perfil">
+    <h1>Miguel Somoza</h1>
+    <p>Mecánico profesional | Zaragoza</p>
+  </header>
+
+  <section>
+    <h2>Perfil</h2>
+    <p>Mecánico con amplia experiencia trabajando al aire libre. Gran resistencia física y disciplina, adquiridas tanto en el oficio como en el entrenamiento de boxeo diario.</p>
+  </section>
+
+  <section>
+    <h2>Experiencia</h2>
+    <ul>
+      <li>Mecánico industrial – más de 11 horas al día trabajando con vehículos, equipos y maquinaria en exteriores.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Habilidades</h2>
+    <ul>
+      <li>Diagnóstico y reparación de motores</li>
+      <li>Trabajo físico y resistencia</li>
+      <li>Trabajo en equipo y bajo presión</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Video demostrativo</h2>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/YvpoJfRi4cc" title="Taller mecánico industrial" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contacto & Redes</h2>
+    <p class="social-links">
+      <a href="#">LinkedIn</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Correo</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Miguel Somoza | CV Online</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < trigger) sec.classList.add('visible');
+      });
+    };
+    window.addEventListener('scroll', showOnScroll);
+    window.addEventListener('load', showOnScroll);
+  </script>
+</body>
+</html>
+
