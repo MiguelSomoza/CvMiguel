@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,7 +62,7 @@
       padding-left: 1em;
     }
     .timeline li::before {
-      content: '\25B6';
+      content: '\\25B6';
       color: #00bfff;
       margin-right: 0.5em;
     }
@@ -77,6 +78,10 @@
     }
     .mode-toggle { right: 20px; }
     .lang-toggle { right: 80px; }
+    .lang-toggle img {
+      width: 24px;
+      vertical-align: middle;
+    }
     .map-container {
       margin-top: 20px;
     }
@@ -117,54 +122,66 @@
 <body>
   <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
   <button class="lang-toggle" onclick="toggleLang()">
-    <img id="flag" src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px;vertical-align:middle;">
-  </button>  <header>
+    <img id="flag" src="https://flagcdn.com/w40/es.png" alt="ES">
+  </button>
+
+  <header>
     <h1>Miguel Somoza García</h1>
     <p>Electromecánico | Técnico en Mecatrónica Industrial</p>
-  </header>  <main id="content-es">
+  </header>
+
+  <main id="content-es">
     <section>
       <h2><i class="fas fa-user"></i> Sobre mí</h2>
       <p>Trabajador, respetuoso, decidido y tenaz. Me adapto rápidamente, aprendo nuevas tecnologías y lenguas, y destaco por mi liderazgo, organización y discreción.</p>
-    </section><section>
-  <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
-  <ul class="timeline">
-    <li>2014: Formación como electricista en AMARO S.L.</li>
-    <li>2016: Formación como electromecánico en Talleres Actur</li>
-    <li>2017-2018: Electromecánico en OPEL (Figueruelas)</li>
-    <li>2018: Formación en C.A.F. como chapista pintor</li>
-    <li>2018-2019: Electromecánico en PSA (Vigo)</li>
-    <li>2019-2021: Electromecánico en PSA (Figueruelas)</li>
-    <li>2021-Actualidad: Electromecánico en SERMA S.A. (Zaragoza)</li>
-  </ul>
-</section>
+    </section>
 
-<section>
-  <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tXAkD11DDwxFcKtTb-MsFlk-y5Um_ZU&ehbc=2E312F" allowfullscreen></iframe>
-  </div>
-</section>
+    <section>
+      <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+      <ul class="timeline">
+        <li>2014: Formación como electricista en AMARO S.L.</li>
+        <li>2016: Formación como electromecánico en Talleres Actur</li>
+        <li>2017-2018: Electromecánico en OPEL (Figueruelas)</li>
+        <li>2018: Formación en C.A.F. como chapista pintor</li>
+        <li>2018-2019: Electromecánico en PSA (Vigo)</li>
+        <li>2019-2021: Electromecánico en PSA (Figueruelas)</li>
+        <li>2021-Actualidad: Electromecánico en SERMA S.A. (Zaragoza)</li>
+      </ul>
+    </section>
 
-  </main>  <main id="content-en" class="hidden">
+    <section>
+      <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tXAkD11DDwxFcKtTb-MsFlk-y5Um_ZU&ehbc=2E312F" allowfullscreen></iframe>
+      </div>
+    </section>
+  </main>
+
+  <main id="content-en" class="hidden">
     <section>
       <h2><i class="fas fa-user"></i> About Me</h2>
       <p>Hard-working, respectful, decisive and tenacious. I quickly adapt, learn new technologies and languages, and stand out for leadership, organization and discretion.</p>
-    </section><section>
-  <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
-  <ul class="timeline">
-    <li>2014: Electrician training at AMARO S.L.</li>
-    <li>2016: Electromechanical training at Talleres Actur</li>
-    <li>2017-2018: Electromechanic at OPEL (Figueruelas)</li>
-    <li>2018: Bodywork training at C.A.F.</li>
-    <li>2018-2019: Electromechanic at PSA (Vigo)</li>
-    <li>2019-2021: Electromechanic at PSA (Figueruelas)</li>
-    <li>2021-Present: Electromechanic at SERMA S.A. (Zaragoza)</li>
-  </ul>
-</section>
+    </section>
 
-  </main>  <footer>
+    <section>
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+      <ul class="timeline">
+        <li>2014: Electrician training at AMARO S.L.</li>
+        <li>2016: Electromechanical training at Talleres Actur</li>
+        <li>2017-2018: Electromechanic at OPEL (Figueruelas)</li>
+        <li>2018: Bodywork training at C.A.F.</li>
+        <li>2018-2019: Electromechanic at PSA (Vigo)</li>
+        <li>2019-2021: Electromechanic at PSA (Figueruelas)</li>
+        <li>2021-Present: Electromechanic at SERMA S.A. (Zaragoza)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
     <p>&copy; 2025 Miguel Somoza García | <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Correo</a></p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const sections = document.querySelectorAll('section');
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.85;
@@ -192,5 +209,6 @@
 
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
-  </script></body>
+  </script>
+</body>
 </html>
