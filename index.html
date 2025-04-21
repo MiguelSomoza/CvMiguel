@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,24 +9,26 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(#0a0a0a, #1a1a1a);
+      background: url('animated-industrial-bg.gif') no-repeat center center fixed;
+      background-size: cover;
       color: #f1f1f1;
       line-height: 1.6;
-      background-image: url('https://www.colourbox.com/preview/4615305-industrial-background.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: center;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.light {
+      background: #f5f5f5;
+      color: #000;
     }
     header, footer, section {
       padding: 2em;
       max-width: 900px;
       margin: auto;
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
     }
     header {
       text-align: center;
-      background: #111;
+      background: rgba(17, 17, 17, 0.8);
       position: relative;
     }
     h1, h2 {
@@ -64,10 +65,9 @@
       color: #00bfff;
       margin-right: 0.5em;
     }
-    .mode-toggle {
+    .mode-toggle, .lang-toggle {
       position: fixed;
       top: 20px;
-      right: 20px;
       background: #222;
       color: #fff;
       border: none;
@@ -75,6 +75,8 @@
       cursor: pointer;
       z-index: 1000;
     }
+    .mode-toggle { right: 20px; }
+    .lang-toggle { right: 80px; }
     .map-container {
       margin-top: 20px;
     }
@@ -107,117 +109,62 @@
       border-left: 4px solid #00bfff;
       margin: 1em 0;
     }
-    a {
-      color: #00bfff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
   <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
-
-  <header>
+  <button class="lang-toggle" onclick="toggleLang()">
+    <img id="flag" src="https://flagcdn.com/w40/es.png" alt="ES" style="width:24px;vertical-align:middle;">
+  </button>  <header>
     <h1>Miguel Somoza García</h1>
     <p>Electromecánico | Técnico en Mecatrónica Industrial</p>
-  </header>
+  </header>  <main id="content-es">
+    <section>
+      <h2><i class="fas fa-user"></i> Sobre mí</h2>
+      <p>Trabajador, respetuoso, decidido y tenaz. Me adapto rápidamente, aprendo nuevas tecnologías y lenguas, y destaco por mi liderazgo, organización y discreción.</p>
+    </section><section>
+  <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+  <ul class="timeline">
+    <li>2014: Formación como electricista en AMARO S.L.</li>
+    <li>2016: Formación como electromecánico en Talleres Actur</li>
+    <li>2017-2018: Electromecánico en OPEL (Figueruelas)</li>
+    <li>2018: Formación en C.A.F. como chapista pintor</li>
+    <li>2018-2019: Electromecánico en PSA (Vigo)</li>
+    <li>2019-2021: Electromecánico en PSA (Figueruelas)</li>
+    <li>2021-Actualidad: Electromecánico en SERMA S.A. (Zaragoza)</li>
+  </ul>
+</section>
 
-  <section>
-    <h2><i class="fas fa-user"></i> Sobre mí</h2>
-    <p>Trabajador, respetuoso, decidido y tenaz. Me adapto rápidamente, aprendo nuevas tecnologías y lenguas, y destaco por mi liderazgo, organización y discreción.</p>
-  </section>
+<section>
+  <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tXAkD11DDwxFcKtTb-MsFlk-y5Um_ZU&ehbc=2E312F" allowfullscreen></iframe>
+  </div>
+</section>
 
-  <section>
-    <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
-    <ul class="timeline">
-      <li>2014: Formación como electricista en AMARO S.L.</li>
-      <li>2016: Formación como electromecánico en Talleres Actur</li>
-      <li>2017-2018: Electromecánico en OPEL (Figueruelas)</li>
-      <li>2018: Formación en C.A.F. como chapista pintor</li>
-      <li>2018-2019: Electromecánico en PSA (Vigo)</li>
-      <li>2019-2021: Electromecánico en PSA (Figueruelas)</li>
-      <li>2021-Actualidad: Electromecánico en SERMA S.A. (Zaragoza)</li>
-    </ul>
-  </section>
+  </main>  <main id="content-en" class="hidden">
+    <section>
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>Hard-working, respectful, decisive and tenacious. I quickly adapt, learn new technologies and languages, and stand out for leadership, organization and discretion.</p>
+    </section><section>
+  <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+  <ul class="timeline">
+    <li>2014: Electrician training at AMARO S.L.</li>
+    <li>2016: Electromechanical training at Talleres Actur</li>
+    <li>2017-2018: Electromechanic at OPEL (Figueruelas)</li>
+    <li>2018: Bodywork training at C.A.F.</li>
+    <li>2018-2019: Electromechanic at PSA (Vigo)</li>
+    <li>2019-2021: Electromechanic at PSA (Figueruelas)</li>
+    <li>2021-Present: Electromechanic at SERMA S.A. (Zaragoza)</li>
+  </ul>
+</section>
 
-  <section>
-    <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
-    <ul>
-      <li>Técnico Auxiliar en Electrónica - Academia Marco (2014)</li>
-      <li>Electromecánica de Vehículos - San Valero (2016)</li>
-      <li>Soldadura y Calderería - Arsenio Jimeno (2018)</li>
-      <li>Mecatrónica Industrial - Arsenio Jimeno (2021)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-certificate"></i> Certificados</h2>
-    <ul>
-      <li>PRL Básico (2021)</li>
-      <li>Plataformas Elevadoras</li>
-      <li>Puente Grúa</li>
-      <li>Carretillas</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-wrench"></i> Proyectos</h2>
-    <ul>
-      <li>Optimización de línea de montaje en PSA</li>
-      <li>Mantenimiento preventivo digital en SERMA</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-heart"></i> Aficiones</h2>
-    <p>Boxeo, pasear con mi perra, viajar, playa y descubrir nuevas rutas en coche.</p>
-  </section>
-
-  <section class="testimonios">
-    <h2><i class="fas fa-comments"></i> Testimonios</h2>
-    <blockquote>“Miguel es una persona comprometida, rápida aprendiendo y muy resol1
-      <blockquote>“Miguel es una persona comprometida, rápida aprendiendo y muy resolutiva.” – Jefe de taller, SERMA</blockquote>
-    <blockquote>“Un compañero que siempre aporta al equipo y se adapta a cualquier situación.” – Excompañero en PSA</blockquote>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-language"></i> English Version</h2>
-    <p><strong>Industrial Mechanic and Technician</strong> with years of experience in car assembly lines, industrial welding, and preventative maintenance. High adaptability and team-oriented mindset.</p>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
-    <div class="map-container">
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1tUDyb1EjXBu6GjPBVco6fx38HQYbYyE&ehbc=2E312F" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-envelope"></i> Contacto directo</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <textarea placeholder="Mensaje..." required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-
-  <section>
-    <h2><i class="fas fa-download"></i> Descargar PDF</h2>
-    <a href="cv_miguel_somoza.pdf" download><button>Descargar CV en PDF</button></a>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Miguel Somoza García | 
-      <a href="#">LinkedIn</a> | 
-      <a href="#">GitHub</a> | 
-      <a href="#">Correo</a>
-    </p>
-  </footer>
-
-  <script>
+  </main>  <footer>
+    <p>&copy; 2025 Miguel Somoza García | <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Correo</a></p>
+  </footer>  <script>
     const sections = document.querySelectorAll('section');
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.85;
@@ -226,11 +173,24 @@
         if (rect.top < trigger) sec.classList.add('visible');
       });
     };
+
     const toggleMode = () => {
       document.body.classList.toggle('light');
     };
+
+    const toggleLang = () => {
+      const es = document.getElementById('content-es');
+      const en = document.getElementById('content-en');
+      const flag = document.getElementById('flag');
+      const isES = !es.classList.contains('hidden');
+
+      es.classList.toggle('hidden');
+      en.classList.toggle('hidden');
+      flag.src = isES ? 'https://flagcdn.com/w40/gb.png' : 'https://flagcdn.com/w40/es.png';
+      flag.alt = isES ? 'EN' : 'ES';
+    };
+
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
-  </script>
-</body>
+  </script></body>
 </html>
