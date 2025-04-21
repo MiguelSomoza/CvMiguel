@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +13,17 @@
       background: linear-gradient(#0a0a0a, #1a1a1a);
       color: #f1f1f1;
       line-height: 1.6;
+    }
+    body.light {
+      background: #f4f4f4;
+      color: #333;
+    }
+    body.light header {
+      background: #e2e2e2;
+    }
+    body.light button {
+      background: #444;
+      color: #fff;
     }
     header, footer, section {
       padding: 2em;
@@ -99,16 +111,34 @@
       border-left: 4px solid #00bfff;
       margin: 1em 0;
     }
+    footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #111;
+    }
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer p {
+      margin: 0;
+    }
   </style>
 </head>
 <body>
-  <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>  <header>
+  <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
+  <header>
     <h1>Miguel Somoza García</h1>
     <p>Electromecánico | Técnico en Mecatrónica Industrial</p>
-  </header>  <section>
+  </header>
+
+  <section>
     <h2><i class="fas fa-user"></i> Sobre mí</h2>
     <p>Trabajador, respetuoso, decidido y tenaz. Me adapto rápidamente, aprendo nuevas tecnologías y lenguas, y destaco por mi liderazgo, organización y discreción.</p>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
     <ul class="timeline">
       <li>2014: Formación como electricista en AMARO S.L.</li>
@@ -119,7 +149,9 @@
       <li>2019-2021: Electromecánico en PSA (Figueruelas)</li>
       <li>2021-Actualidad: Electromecánico en SERMA S.A. (Zaragoza)</li>
     </ul>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
     <ul>
       <li>Técnico Auxiliar en Electrónica - Academia Marco (2014)</li>
@@ -127,7 +159,9 @@
       <li>Soldadura y Calderería - Arsenio Jimeno (2018)</li>
       <li>Mecatrónica Industrial - Arsenio Jimeno (2021)</li>
     </ul>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-certificate"></i> Certificados</h2>
     <ul>
       <li>PRL Básico (2021)</li>
@@ -135,28 +169,39 @@
       <li>Puente Grúa</li>
       <li>Carretillas</li>
     </ul>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-wrench"></i> Proyectos</h2>
     <ul>
       <li>Optimización de línea de montaje en PSA</li>
       <li>Mantenimiento preventivo digital en SERMA</li>
     </ul>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-heart"></i> Aficiones</h2>
     <p>Boxeo, pasear con mi perra, viajar, playa y descubrir nuevas rutas en coche.</p>
-  </section>  <section class="testimonios">
+  </section>
+
+  <section class="testimonios">
     <h2><i class="fas fa-comments"></i> Testimonios</h2>
     <blockquote>“Miguel es una persona comprometida, rápida aprendiendo y muy resolutiva.” – Jefe de taller, SERMA</blockquote>
     <blockquote>“Un compañero que siempre aporta al equipo y se adapta a cualquier situación.” – Excompañero en PSA</blockquote>
-  </section>  <section>
-    <h2><i class="fas fa-language"></i> English Version</h2>
-    <p><strong>Industrial Mechanic and Technician</strong> with years of experience in car assembly lines, industrial welding, and preventative maintenance. High adaptability and team-oriented mindset.</p>
-  </section>  <section>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-language"></i> <a href="#english-version">English Version</a></h2>
+  </section>
+
+  <section>
     <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
     <div class="map-container">
       <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aURO-MAPA-EJEMPLO" allowfullscreen></iframe>
     </div>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-envelope"></i> Contacto directo</h2>
     <form>
       <input type="text" placeholder="Nombre" required>
@@ -164,24 +209,10 @@
       <textarea placeholder="Mensaje..." required></textarea>
       <button type="submit">Enviar</button>
     </form>
-  </section>  <section>
+  </section>
+
+  <section>
     <h2><i class="fas fa-download"></i> Descargar PDF</h2>
-    <a href="cv_miguel_somoza.pdf" download><button>Descargar CV en PDF</button></a>
-  </section>  <footer>
-    <p>&copy; 2025 Miguel Somoza García | <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Correo</a></p>
-  </footer>  <script>
-    const sections = document.querySelectorAll('section');
-    const showOnScroll = () => {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top < trigger) sec.classList.add('visible');
-      });
-    };
-    const toggleMode = () => {
-      document.body.classList.toggle('light');
-    };
-    window.addEventListener('scroll', showOnScroll);
-    window.addEventListener('load', showOnScroll);
-  </script></body>
-</html>
+    <a href="ruta/a/tu/archivo/cv_miguel_somoza.pdf
+
+      
