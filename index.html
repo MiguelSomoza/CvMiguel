@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Miguel Somoza García</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,16 +14,18 @@
       background: linear-gradient(#0a0a0a, #1a1a1a);
       color: #f1f1f1;
       line-height: 1.6;
+      position: relative;
     }
     header, footer, section {
       padding: 2em;
       max-width: 900px;
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
     header {
       text-align: center;
       background: #111;
-      position: relative;
     }
     h1, h2 {
       color: #00bfff;
@@ -67,6 +70,7 @@
       border: none;
       padding: 0.5em;
       cursor: pointer;
+      z-index: 2;
     }
     .map-container {
       margin-top: 20px;
@@ -103,6 +107,9 @@
   </style>
 </head>
 <body>
+  <!-- Fondo interactivo -->
+  <div id="tsparticles" style="position: fixed; width: 100%; height: 100%; z-index: 0;"></div>
+
   <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
 
   <header>
@@ -175,7 +182,7 @@
   <section>
     <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aURO-MAPA-EJEMPLO" allowfullscreen></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1jIpNchBLD6h_cVQfePslfYdHhPE&hl=es"></iframe>
     </div>
   </section>
 
@@ -195,7 +202,11 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Miguel Somoza García | <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Correo</a></p>
+    <p>&copy; 2025 Miguel Somoza García | 
+      <a href="https://www.linkedin.com/in/tuusuario" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/tuusuario" target="_blank">GitHub</a> | 
+      <a href="mailto:tuemail@correo.com">Correo</a>
+    </p>
   </footer>
 
   <script>
@@ -212,6 +223,45 @@
     };
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
+
+    tsParticles.load("tsparticles", {
+      background: {
+        color: { value: "#0a0a0a" }
+      },
+      fpsLimit: 60,
+      particles: {
+        number: {
+          value: 50,
+          density: { enable: true, value_area: 800 }
+        },
+        color: {
+          value: "#00bfff"
+        },
+        shape: {
+          type: "polygon",
+          polygon: { nb_sides: 6 }
+        },
+        opacity: { value: 0.4 },
+        size: { value: 8, random: true },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          outMode: "out"
+        }
+      },
+      interactivity: {
+        detectsOn: "canvas",
+        events: {
+          onHover: { enable: true, mode: "repulse" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 }
+        }
+      },
+      detectRetina: true
+    });
   </script>
 </body>
 </html>
