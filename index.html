@@ -5,159 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV Miguel Somoza García</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    /* Estilos Globales */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(#0a0a0a, #1a1a1a);
       color: #f1f1f1;
       line-height: 1.6;
-      transition: background 0.5s ease;
     }
-
     header, footer, section {
       padding: 2em;
       max-width: 900px;
       margin: auto;
     }
-
     header {
       text-align: center;
       background: #111;
       position: relative;
-      padding: 3em;
-      border-radius: 10px;
     }
-
     h1, h2 {
       color: #00bfff;
-      font-weight: 600;
     }
-
     ul {
       list-style: none;
       padding: 0;
     }
-
     li {
       margin-bottom: 10px;
     }
-
     .visible {
       animation: fadeInUp 1s ease forwards;
       opacity: 1;
     }
-
     section {
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s ease-out;
     }
-
-    /* Animaciones */
     @keyframes fadeInUp {
       to {
         transform: translateY(0);
         opacity: 1;
       }
     }
-
-    /* Timeline */
     .timeline {
       border-left: 3px solid #00bfff;
       padding-left: 1em;
     }
-
     .timeline li::before {
       content: '\25B6';
       color: #00bfff;
       margin-right: 0.5em;
     }
-
-    /* Modo Claro/Oscuro */
-    .light {
-      background: white;
-      color: #333;
-    }
-
-    /* Fondo Parallax */
-    .parallax {
-      background-image: url('https://via.placeholder.com/1500x500');
-      height: 500px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-
-    /* Gráfico de habilidades */
-    .skills-chart {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 30px;
-    }
-
-    .skill-bar {
-      width: 80px;
-      height: 10px;
-      background-color: #444;
-      border-radius: 5px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-bar span {
-      display: block;
-      height: 100%;
-      background-color: #00bfff;
-      width: 0;
-      animation: fillBar 2s forwards;
-    }
-
-    @keyframes fillBar {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    /* Mapas y Contacto */
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-
-    form input, form textarea {
-      padding: 0.5em;
-      margin-bottom: 1em;
-      border-radius: 5px;
-      border: 1px solid #444;
-    }
-
-    button {
-      background: #00bfff;
-      color: #000;
-      border: none;
-      padding: 0.75em;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    /* Testimonios */
-    .testimonios blockquote {
-      background: #222;
-      padding: 1em;
-      border-left: 4px solid #00bfff;
-      margin: 1em 0;
-    }
-
-    /* Estilo Modo Claro/Oscuro */
     .mode-toggle {
       position: fixed;
       top: 20px;
@@ -168,37 +68,53 @@
       padding: 0.5em;
       cursor: pointer;
     }
-
-    /* Sección de Descarga */
-    .download-section {
+    .map-container {
       margin-top: 20px;
     }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      header {
-        padding: 2em;
-      }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 0.5em;
+      margin-bottom: 1em;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background: #00bfff;
+      color: #000;
+      border: none;
+      padding: 0.75em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .testimonios blockquote {
+      background: #222;
+      padding: 1em;
+      border-left: 4px solid #00bfff;
+      margin: 1em 0;
     }
   </style>
 </head>
 <body>
-  <!-- Botón para modo Claro/Oscuro -->
   <button class="mode-toggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
 
-  <!-- Header -->
-  <header class="parallax">
+  <header>
     <h1>Miguel Somoza García</h1>
     <p>Electromecánico | Técnico en Mecatrónica Industrial</p>
   </header>
 
-  <!-- Sobre mí -->
   <section>
     <h2><i class="fas fa-user"></i> Sobre mí</h2>
     <p>Trabajador, respetuoso, decidido y tenaz. Me adapto rápidamente, aprendo nuevas tecnologías y lenguas, y destaco por mi liderazgo, organización y discreción.</p>
   </section>
 
-  <!-- Experiencia Profesional -->
   <section>
     <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
     <ul class="timeline">
@@ -212,17 +128,50 @@
     </ul>
   </section>
 
-  <!-- Habilidades -->
   <section>
-    <h2><i class="fas fa-cogs"></i> Habilidades</h2>
-    <div class="skills-chart">
-      <div class="skill-bar"><span style="width: 90%"></span></div>
-      <div class="skill-bar"><span style="width: 75%"></span></div>
-      <div class="skill-bar"><span style="width: 80%"></span></div>
-    </div>
+    <h2><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+    <ul>
+      <li>Técnico Auxiliar en Electrónica - Academia Marco (2014)</li>
+      <li>Electromecánica de Vehículos - San Valero (2016)</li>
+      <li>Soldadura y Calderería - Arsenio Jimeno (2018)</li>
+      <li>Mecatrónica Industrial - Arsenio Jimeno (2021)</li>
+    </ul>
   </section>
 
-  <!-- Mapa de Ciudades donde he trabajado -->
+  <section>
+    <h2><i class="fas fa-certificate"></i> Certificados</h2>
+    <ul>
+      <li>PRL Básico (2021)</li>
+      <li>Plataformas Elevadoras</li>
+      <li>Puente Grúa</li>
+      <li>Carretillas</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-wrench"></i> Proyectos</h2>
+    <ul>
+      <li>Optimización de línea de montaje en PSA</li>
+      <li>Mantenimiento preventivo digital en SERMA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-heart"></i> Aficiones</h2>
+    <p>Boxeo, pasear con mi perra, viajar, playa y descubrir nuevas rutas en coche.</p>
+  </section>
+
+  <section class="testimonios">
+    <h2><i class="fas fa-comments"></i> Testimonios</h2>
+    <blockquote>“Miguel es una persona comprometida, rápida aprendiendo y muy resolutiva.” – Jefe de taller, SERMA</blockquote>
+    <blockquote>“Un compañero que siempre aporta al equipo y se adapta a cualquier situación.” – Excompañero en PSA</blockquote>
+  </section>
+
+  <section>
+    <h2><i class="fas fa-language"></i> English Version</h2>
+    <p><strong>Industrial Mechanic and Technician</strong> with years of experience in car assembly lines, industrial welding, and preventative maintenance. High adaptability and team-oriented mindset.</p>
+  </section>
+
   <section>
     <h2><i class="fas fa-map-marker-alt"></i> Ciudades donde he trabajado</h2>
     <div class="map-container">
@@ -230,7 +179,6 @@
     </div>
   </section>
 
-  <!-- Contacto -->
   <section>
     <h2><i class="fas fa-envelope"></i> Contacto directo</h2>
     <form>
@@ -241,25 +189,16 @@
     </form>
   </section>
 
-  <!-- Descargar PDF -->
-  <section class="download-section">
+  <section>
     <h2><i class="fas fa-download"></i> Descargar PDF</h2>
     <a href="cv_miguel_somoza.pdf" download><button>Descargar CV en PDF</button></a>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Miguel Somoza García | <a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Correo</a></p>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // Función para cambiar entre modo claro y oscuro
-    const toggleMode = () => {
-      document.body.classList.toggle('light');
-    };
-
-    // Animación para mostrar secciones al hacer scroll
     const sections = document.querySelectorAll('section');
     const showOnScroll = () => {
       const trigger = window.innerHeight * 0.85;
@@ -268,7 +207,9 @@
         if (rect.top < trigger) sec.classList.add('visible');
       });
     };
-
+    const toggleMode = () => {
+      document.body.classList.toggle('light');
+    };
     window.addEventListener('scroll', showOnScroll);
     window.addEventListener('load', showOnScroll);
   </script>
